@@ -25,11 +25,6 @@ test("Gera apenas uma pessoa", async ({ page }) => {
     await page.selectOption("#cep_cidade", { value: "683" });
 
     // Etapa 6: Define a pontuação como não
-    // await page.evaluate(() => {
-    //   (document.querySelector("#pontuacao_nao") as HTMLInputElement).checked =
-    //     true;
-    //   test("Gera 30 pessoas e cria tabela", async ({ page }) => {});
-    // });
 
     await page.evaluate(() => {
       (document.querySelector("#pontuacao_nao") as HTMLInputElement).checked =
