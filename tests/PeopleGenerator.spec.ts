@@ -35,6 +35,9 @@ test("Gera apenas uma pessoa", async ({ page }) => {
 
     // Etapa 8: Gera os dados
     await page.click("#bt_gerar_pessoa");
+
+    // Espera 5 segundos antes de fechar a página
+    await page.waitForTimeout(5000);
   } catch (error) {
     console.error("Ocorreu um erro:", error);
   }
