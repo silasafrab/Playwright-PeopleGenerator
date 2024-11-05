@@ -25,6 +25,12 @@ test("Gera apenas uma pessoa", async ({ page }) => {
     await page.selectOption("#cep_cidade", { value: "683" });
 
     // Etapa 6: Define a pontuação como não
+    // await page.evaluate(() => {
+    //   (document.querySelector("#pontuacao_nao") as HTMLInputElement).checked =
+    //     true;
+    //   test("Gera 30 pessoas e cria tabela", async ({ page }) => {});
+    // });
+
     await page.evaluate(() => {
       (document.querySelector("#pontuacao_nao") as HTMLInputElement).checked =
         true;
@@ -37,7 +43,7 @@ test("Gera apenas uma pessoa", async ({ page }) => {
     await page.click("#bt_gerar_pessoa");
 
     // Espera 5 segundos antes de fechar a página
-    await page.waitForTimeout(5000);
+    await page.waitForTimeout(500);
   } catch (error) {
     console.error("Ocorreu um erro:", error);
   }
